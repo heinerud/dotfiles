@@ -1,0 +1,14 @@
+{
+    "gitlens.codeLens.enabled": false,
+    "editor.formatOnSave": true,
+    "editor.trimAutoWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.fontFamily": "'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.rulers": [
+        79,
+        120
+    ],
+    "terminal.integrated.fontFamily": "Hack"
+}
