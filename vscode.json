@@ -10,5 +10,9 @@
         79,
         120
     ],
-    "terminal.integrated.fontFamily": "Hack"
+    "terminal.integrated.fontFamily": "Hack",
+    "python.formatting.provider": "yapf",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true
 }

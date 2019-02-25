@@ -1,0 +1,10 @@
+[alias]
+        a = add
+        b = branch
+        c = checkout
+        d = diff
+        l = log --oneline --graph
+        f = fetch
+        s = status
+[core]
+        editor = vim
