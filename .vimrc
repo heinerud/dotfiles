@@ -34,8 +34,8 @@ colorscheme gruvbox
 
 " set autoread
 " set ruler
-" set ignorecase
-" set smartcase
+set ignorecase
+set smartcase
 set hlsearch
 set incsearch
 " set lazyredraw
