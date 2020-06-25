@@ -48,4 +48,4 @@ abbr tigb 'tig (git branch | fzf | sed "s/ //g")'
 abbr tmux 'env TERM=screen-256color tmux'
 abbr xc 'xclip -selection clipboard'
 
-echo | xargs -n1 code --install-extension dbaeumer.vscode-eslint eamodio.gitlens esbenp.prettier-vscode Gruntfuggly.todo-tree monokai.theme-monokai-pro-vscode ms-azuretools.vscode-docker ms-python.python ms-vscode.Go njpwerner.autodocstring PKief.material-icon-theme redhat.vscode-yaml richie5um2.vscode-sort-json wayou.vscode-todo-highlight
+echo dbaeumer.vscode-eslint eamodio.gitlens esbenp.prettier-vscode Gruntfuggly.todo-tree monokai.theme-monokai-pro-vscode ms-azuretools.vscode-docker ms-python.python njpwerner.autodocstring PKief.material-icon-theme redhat.vscode-yaml richie5um2.vscode-sort-json wayou.vscode-todo-highlight | xargs -n1 code --install-extension
