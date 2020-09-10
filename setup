@@ -26,7 +26,7 @@ vlc
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 pip install pipx
-echo bandit black flake8 isort mypy pipenv pylint sphinx | xargs -n1 pipx install
+echo bandit black flake8 isort mypy pipenv pylint sphinx tox pytest | xargs -n1 pipx install
 
 abbr dc 'sudo docker-compose'
 abbr docker 'sudo docker'
