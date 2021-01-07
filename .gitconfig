@@ -5,16 +5,36 @@
 [color]
     ui = true
 [color "branch"]
-    current = yellow bold
-    local = green bold
-    remote = cyan bold
+    current = green bold
+    local = white bold
+    remote = red bold
 [color "diff"]
     meta = cyan bold
     frag = magenta bold
     old = red bold
     new = green bold
-    whitespace = red reverse
 [color "status"]
     added = green bold
+    deleted = red bold
     changed = yellow bold
     untracked = red bold
+
+[alias]
+    ap = add -p
+    a = add
+    aa = add --all
+    amend = commit --amend
+    b = branch
+    cb = !git b | tac | fzf | xargs -r git co
+    ci = commit --verbose
+    cl = clean -fdxn
+    co = checkout
+    cp = checkout -p
+    f = fetch
+    fp = fetch -p
+    g = grep
+    l = log --oneline --graph
+    ls = ls-files
+    s = status
+    d = diff
+    dh = diff --find-copies-harder
