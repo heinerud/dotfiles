@@ -13,6 +13,7 @@ Plug 'morhetz/gruvbox'
 Plug 'ambv/black'
 Plug 'davidhalter/jedi-vim'
 Plug 'vim-python/python-syntax'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 nnoremap <C-j> <C-w>j
@@ -21,6 +22,10 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 nnoremap <C-t> :Files<CR>
+
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>
+vnoremap <C-s> <Esc>:w<CR>
 
 map ,g :w\|:!go fmt && go run %<cr>
 map ,t :w\|:!black % && python3 %<cr>
@@ -52,9 +57,14 @@ set tabstop=4
 " set wrap "Wrap lines
 set directory=$HOME/.vimswap//
 
+
+" Highlight long lines
+augroup vimrc_autocmds
+    autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+    autocmd BufEnter * match OverLength /\%>79v.\+/
+augroup END
 " set colorcolumn=80
 
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
-  autocmd BufEnter * match OverLength /\%>79v.\+/
-augroup END
+" Remove trailing whitepace and newlines
+autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * %s/\n\+\%$//e

@@ -1,0 +1,30 @@
+abbr -a -U -- c 'code .'
+abbr -a -U -- calc libreoffice.calc
+abbr -a -U -- dc 'sudo docker-compose'
+abbr -a -U -- docker 'sudo docker'
+abbr -a -U -- gam 'git commit -v --amend'
+abbr -a -U -- gap 'git add -p'
+abbr -a -U -- gb 'git branch'
+abbr -a -U -- gcb 'git branch | tac | fzf | xargs -r git checkout'
+abbr -a -U -- gci 'git commit -v'
+abbr -a -U -- gcl 'git clean -fdxn'
+abbr -a -U -- gco 'git checkout'
+abbr -a -U -- gcp 'git checkout -p'
+abbr -a -U -- gf 'git fetch'
+abbr -a -U -- gfi 'git commit -v --fixup'
+abbr -a -U -- gfix 'git commit --fixup'
+abbr -a -U -- gfp 'git fetch -p'
+abbr -a -U -- gg 'git grep'
+abbr -a -U -- gl 'git log --oneline --graph'
+abbr -a -U -- gls 'git ls-files'
+abbr -a -U -- gp 'git pull'
+abbr -a -U -- gs 'git status'
+abbr -a -U -- m 'sudo mount -av'
+abbr -a -U -- p2r jq\ -r\ \'.default\ \|\ to_entries\[\]\ \|\ .key\ +\ .value.version\'
+abbr -a -U -- py python3
+abbr -a -U -- python python3
+abbr -a -U -- r ranger
+abbr -a -U -- sound 'pulseaudio -k && sudo alsa force-reload'
+abbr -a -U -- t tmux
+abbr -a -U -- tigb 'tig (git branch | fzf | sed "s/ //g")'
+abbr -a -U -- xc 'xclip -selection clipboard'

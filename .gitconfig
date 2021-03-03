@@ -20,10 +20,10 @@
     untracked = red bold
 
 [alias]
-    ap = add -p
     a = add
     aa = add --all
     amend = commit --amend
+    ap = add -p
     b = branch
     cb = !git b | tac | fzf | xargs -r git co
     ci = commit --verbose
