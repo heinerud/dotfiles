@@ -27,6 +27,16 @@ nnoremap <C-s> :w<CR>
 inoremap <C-s> <Esc>:w<CR>
 vnoremap <C-s> <Esc>:w<CR>
 
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    nnoremap <C-i> :w<CR>
+    inoremap <C-i> <Esc>:w<CR>
+    vnoremap <C-i> <Esc>:w<CR>
+  endif
+endif
+
+
 map ,g :w\|:!go fmt && go run %<cr>
 map ,t :w\|:!black % && python3 %<cr>
 
