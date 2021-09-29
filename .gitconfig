@@ -38,3 +38,5 @@
     s = status
     d = diff
     dh = diff --find-copies-harder
+[pull]
+	ff = only
