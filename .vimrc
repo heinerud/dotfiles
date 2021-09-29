@@ -78,3 +78,5 @@ augroup END
 " Remove trailing whitepace and newlines
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWritePre * %s/\n\+\%$//e
+
+set shortmess-=S
