@@ -1,0 +1,19 @@
+set previewer ~/.config/lf/preview.sh
+
+map D trash
+map . set hidden!
+map u $view "$f"
+
+cmd mkdir ${{
+  mkdir $1
+}}
+
+cmd touch ${{
+  touch $@
+}}
+
+cmd vimdiff ${{
+  vimdiff $fx
+}}
+
+cmd trash $IFS="`printf '\n\t'`"; mv $fx ~/.trash
