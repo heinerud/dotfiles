@@ -1,19 +1,17 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'tommcdo/vim-fugitive-blame-ext'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-signify'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 Plug 'morhetz/gruvbox'
 Plug 'ambv/black'
 Plug 'davidhalter/jedi-vim'
 Plug 'vim-python/python-syntax'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 nnoremap <C-j> <C-w>j
