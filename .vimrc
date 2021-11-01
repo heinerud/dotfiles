@@ -68,7 +68,7 @@ set expandtab
 set smarttab
 set shiftwidth=4
 set tabstop=4
-" set ai "Auto indent
+set autoindent
 " set si "Smart indent
 " set wrap "Wrap lines
 set directory=$HOME/.vimswap//
