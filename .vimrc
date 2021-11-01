@@ -73,6 +73,12 @@ set autoindent
 " set wrap "Wrap lines
 set directory=$HOME/.vimswap//
 
+set winwidth=79
+set winminwidth=10
+set winheight=999
+set winminheight=5
+set cursorline
+
 
 " Highlight long lines
 augroup vimrc_autocmds
