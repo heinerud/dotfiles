@@ -81,10 +81,10 @@ set cursorline
 
 
 " Highlight long lines
-augroup vimrc_autocmds
-    autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
-    autocmd BufEnter * match OverLength /\%>79v.\+/
-augroup END
+" augroup vimrc_autocmds
+"     autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+"     autocmd BufEnter * match OverLength /\%>79v.\+/
+" augroup END
 " set colorcolumn=80
 
 " Remove trailing whitepace and newlines
