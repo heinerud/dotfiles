@@ -25,6 +25,8 @@ nnoremap <C-s> :w<CR>
 inoremap <C-s> <Esc>:w<CR>
 vnoremap <C-s> <Esc>:w<CR>
 
+nnoremap <C-q> :q<CR>
+
 if has("unix")
   let s:uname = system("uname")
   if s:uname == "Darwin\n"
