@@ -29,6 +29,9 @@ nnoremap <C-q> :q<CR>
 
 nnoremap <leader><leader> <C-^>
 
+nnoremap <leader>cv :e ~/.vimrc<CR>
+nnoremap <leader>cg :e ~/.gitconfig<CR>
+
 if has("unix")
   let s:uname = system("uname")
   if s:uname == "Darwin\n"
