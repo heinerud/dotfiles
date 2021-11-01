@@ -44,6 +44,7 @@ endif
 
 map ,g :w\|:!go fmt && go run %<cr>
 map ,t :w\|:!black % && python3 %<cr>
+map ,s :source ~/.vimrc<cr>
 
 set background=dark
 set number
