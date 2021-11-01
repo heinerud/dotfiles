@@ -63,7 +63,7 @@ set incsearch
 " set showmatch
 " set mat=2
 
-" syntax enable
+syntax on
 set expandtab
 set smarttab
 set shiftwidth=4
