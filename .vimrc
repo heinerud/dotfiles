@@ -94,3 +94,5 @@ autocmd BufWritePre * %s/\n\+\%$//e
 set shortmess-=S
 
 let g:jedi#show_call_signatures = "2"
+
+set mouse=a
