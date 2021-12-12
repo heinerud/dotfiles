@@ -6,7 +6,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-signify'
-" Plug 'ervandew/supertab'
+Plug 'ervandew/supertab'
 Plug 'morhetz/gruvbox'
 Plug 'ambv/black'
 Plug 'davidhalter/jedi-vim'
