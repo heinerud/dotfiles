@@ -44,6 +44,7 @@ endif
 
 map ,g :w\|:!go fmt && go run %<cr>
 map ,t :w\|:!python3 % && black % -q<cr>
+map ,b :w\|:!black %<cr>
 map ,f :w\|:!flake8 %<cr>
 map ,i :w\|:!isort %<cr>
 map ,s :source ~/.vimrc<cr>
