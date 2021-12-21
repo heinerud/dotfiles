@@ -31,6 +31,10 @@ nnoremap <leader><leader> <C-^>
 
 nnoremap <leader>cv :e ~/.vimrc<CR>
 nnoremap <leader>cg :e ~/.gitconfig<CR>
+nnoremap <Leader>" ciw""<Esc>P
+nnoremap <Leader>' ciw''<Esc>P
+nnoremap <Leader>[ ciw[]<Esc>P
+nnoremap <Leader>{ ciw{}<Esc>P
 
 if has("unix")
   let s:uname = system("uname")
