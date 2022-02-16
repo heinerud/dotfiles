@@ -1,0 +1,48 @@
+window:
+  dimensions:
+    columns: 150
+    lines: 40
+  padding:
+    x: 5
+    y: 5
+  decorations: None
+
+font:
+  size: 10
+  normal:
+    family: Hack
+  bold:
+    family: Hack
+  italic:
+    family: Hack
+
+
+# Google Dark
+colors:
+  primary:
+    background: '#202124'
+    foreground: '#E8EAED'
+
+  cursor:
+    text: '#202124'
+    cursor: '#E8EAED'
+
+  normal:
+    black:   '#202124'
+    red:     '#EA4335'
+    green:   '#34A853'
+    yellow:  '#FBBC04'
+    blue:    '#4285F4'
+    magenta: '#A142F4'
+    cyan:    '#24C1E0'
+    white:   '#E8EAED'
+
+  bright:
+    black:   '#5F6368'
+    red:     '#EA4335'
+    green:   '#34A853'
+    yellow:  '#FBBC04'
+    blue:    '#4285F4'
+    magenta: '#A142F4'
+    cyan:    '#24C1E0'
+    white:   '#E8EAED'
