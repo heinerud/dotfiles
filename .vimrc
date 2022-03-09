@@ -85,9 +85,9 @@ set directory=$HOME/.vimswap//
 au FocusGained,BufEnter * :checktime
 
 set winwidth=120
-set winminwidth=10
+set winminwidth=15
 set winheight=999
-set winminheight=5
+set winminheight=8
 set cursorline
 
 
