@@ -11,6 +11,7 @@ Plug 'morhetz/gruvbox'
 Plug 'ambv/black'
 Plug 'davidhalter/jedi-vim'
 Plug 'vim-python/python-syntax'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -79,8 +80,11 @@ set autoindent
 " set si "Smart indent
 " set wrap "Wrap lines
 set directory=$HOME/.vimswap//
+" set noswapfile
 
-set winwidth=79
+au FocusGained,BufEnter * :checktime
+
+set winwidth=120
 set winminwidth=10
 set winheight=999
 set winminheight=5
