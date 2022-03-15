@@ -17,3 +17,5 @@ cmd vimdiff ${{
 }}
 
 cmd trash $IFS="`printf '\n\t'`"; mv $fx ~/.trash
+
+set info size
