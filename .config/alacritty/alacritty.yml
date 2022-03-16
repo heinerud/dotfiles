@@ -11,13 +11,13 @@ env:
   TERM: xterm-256color
 
 font:
-  size: 9
+  size: 12
   normal:
-    family: Hack
+    family: SFMono Nerd Font
   bold:
-    family: Hack
+    family: SFMono Nerd Font
   italic:
-    family: Hack
+    family: SFMono Nerd Font
 
 
 # Google Dark
