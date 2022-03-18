@@ -8,6 +8,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-signify'
 Plug 'ervandew/supertab'
 Plug 'morhetz/gruvbox'
+Plug 'arzg/vim-colors-xcode'
+Plug 'hzchirs/vim-material'
+Plug 'cormacrelf/vim-colors-github'
+Plug 'rakr/vim-one'
 Plug 'ambv/black'
 Plug 'davidhalter/jedi-vim'
 Plug 'vim-python/python-syntax'
@@ -54,12 +58,8 @@ map ,f :w\|:!flake8 %<cr>
 map ,i :w\|:!isort %<cr>
 map ,s :source ~/.vimrc<cr>
 
-set background=dark
-set number
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark="hard"
-colorscheme gruvbox
 
+set number
 set autoread
 " set ruler
 set ignorecase
@@ -71,7 +71,6 @@ set incsearch
 " set showmatch
 " set mat=2
 
-syntax on
 set expandtab
 set smarttab
 set shiftwidth=4
@@ -104,15 +103,9 @@ autocmd BufWritePre * %s/\n\+\%$//e
 
 set shortmess-=S
 
-let g:jedi#show_call_signatures = "2"
+" let g:jedi#show_call_signatures = "2"
 
 set mouse=a
-
-let g:lightline = {
-      \ 'component_function': {
-      \   'filename': 'LightlineFilename',
-      \ }
-      \ }
 
 function! LightlineFilename()
   let root = fnamemodify(get(b:, 'git_dir'), ':h')
@@ -122,3 +115,38 @@ function! LightlineFilename()
   endif
   return expand('%')
 endfunction
+
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead',
+      \   'filename': 'LightlineFilename',
+      \ },
+      \ }
+
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+highlight Comment cterm=italic
+
+syntax on
+set termguicolors
+
+" let g:gruvbox_italic=1
+" let g:gruvbox_contrast_dark="hard"
+" let g:gruvbox_contrast_light="hard"
+" set background=dark
+" colorscheme gruvbox
+
+" colorscheme github
+" let g:lightline = { 'colorscheme': 'github' }
+
+" colorscheme vim-material
+
+" colorscheme xcodelight
+
+colorscheme one
+let g:one_allow_italics=1

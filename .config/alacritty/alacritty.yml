@@ -5,7 +5,6 @@ window:
   padding:
     x: 5
     y: 5
-  decorations: None
 
 env:
   TERM: xterm-256color
@@ -13,39 +12,121 @@ env:
 font:
   size: 12
   normal:
-    family: SFMono Nerd Font
+    family: Hack Nerd Font
   bold:
-    family: SFMono Nerd Font
+    family: Hack Nerd Font
   italic:
-    family: SFMono Nerd Font
+    family: Hack Nerd Font
 
 
-# Google Dark
+# # Google Dark
+# colors:
+#   primary:
+#     background: '#202124'
+#     foreground: '#E8EAED'
+#   cursor:
+#     text: '#202124'
+#     cursor: '#E8EAED'
+#   normal:
+#     black:   '#202124'
+#     red:     '#EA4335'
+#     green:   '#34A853'
+#     yellow:  '#FBBC04'
+#     blue:    '#4285F4'
+#     magenta: '#A142F4'
+#     cyan:    '#24C1E0'
+#     white:   '#E8EAED'
+#   bright:
+#     black:   '#5F6368'
+#     red:     '#EA4335'
+#     green:   '#34A853'
+#     yellow:  '#FBBC04'
+#     blue:    '#4285F4'
+#     magenta: '#A142F4'
+#     cyan:    '#24C1E0'
+#     white:   '#E8EAED'
+
+# Google Light
 colors:
   primary:
-    background: '#202124'
-    foreground: '#E8EAED'
+    background: '#FFFFFF'
+    foreground: '#5F6368'
   cursor:
-    text: '#202124'
-    cursor: '#E8EAED'
+    text: '#5F6368'
+    cursor: '#5F6368'
   normal:
     black:   '#202124'
     red:     '#EA4335'
     green:   '#34A853'
     yellow:  '#FBBC04'
     blue:    '#4285F4'
-    magenta: '#A142F4'
-    cyan:    '#24C1E0'
+    magenta: '#24C1E0'
+    cyan:    '#A142F4'
     white:   '#E8EAED'
   bright:
     black:   '#5F6368'
     red:     '#EA4335'
     green:   '#34A853'
-    yellow:  '#FBBC04'
+    yellow:  '#FBBC05'
     blue:    '#4285F4'
-    magenta: '#A142F4'
-    cyan:    '#24C1E0'
-    white:   '#E8EAED'
+    magenta: '#24C1E0'
+    cyan:    '#A142F4'
+    white:   '#FFFFFF'
+
+# # One Light
+# colors:
+#   primary:
+#     background: '#F8F8F8'
+#     foreground: '#2A2B32'
+#   cursor:
+#     text: '#2A2B32'
+#     cursor: '#2A2B32'
+#   normal:
+#     black:   '#000000'
+#     red:     '#DA3E39'
+#     green:   '#41933E'
+#     yellow:  '#855504'
+#     blue:    '#315EEE'
+#     magenta: '#0E6FAD'
+#     cyan:    '#930092'
+#     white:   '#8E8F96'
+#   bright:
+#     black:   '#2A2B32'
+#     red:     '#2A2B32'
+#     green:   '#41933E'
+#     yellow:  '#855504'
+#     blue:    '#315EEE'
+#     magenta: '#0E6FAD'
+#     cyan:    '#930092'
+#     white:   '#FFFEFE'
+
+# # Gruvbox
+# colors:
+#   primary:
+#     background: '#fbf1c7'
+#     foreground: '#3c3836'
+#   cursor:
+#     text: '#3c3836'
+#     cursor: '#3c3836'
+#   normal:
+#     black:   '#fbf1c7'
+#     red:     '#cc241d'
+#     green:   '#98971a'
+#     yellow:  '#d79921'
+#     blue:    '#458588'
+#     magenta: '#689d6a'
+#     cyan:    '#b16286'
+#     white:   '#7c6f64'
+#   bright:
+#     black:   '#928374'
+#     red:     '#9d0006'
+#     green:   '#79740e'
+#     yellow:  '#b57614'
+#     blue:    '#076678'
+#     magenta: '#427b58'
+#     cyan:    '#8f3f71'
+#     white:   '#3c3836'
+
 
 key_bindings:
   - { key: J,        mods: Alt,           chars: "\x1bj"                       }
