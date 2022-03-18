@@ -3,4 +3,3 @@ status is-login; and pyenv init --path | source
 pyenv init - | source
 
 set -g theme_nerd_fonts yes
-set -g theme_color_scheme light

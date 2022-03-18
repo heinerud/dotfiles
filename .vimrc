@@ -117,7 +117,6 @@ function! LightlineFilename()
 endfunction
 
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -135,11 +134,11 @@ highlight Comment cterm=italic
 syntax on
 set termguicolors
 
-" let g:gruvbox_italic=1
+let g:gruvbox_italic=1
 " let g:gruvbox_contrast_dark="hard"
 " let g:gruvbox_contrast_light="hard"
-" set background=dark
-" colorscheme gruvbox
+set background=dark
+colorscheme gruvbox
 
 " colorscheme github
 " let g:lightline = { 'colorscheme': 'github' }
@@ -148,5 +147,5 @@ set termguicolors
 
 " colorscheme xcodelight
 
-colorscheme one
-let g:one_allow_italics=1
+" colorscheme one
+" let g:one_allow_italics=1

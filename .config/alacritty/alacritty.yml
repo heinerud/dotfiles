@@ -19,59 +19,59 @@ font:
     family: Hack Nerd Font
 
 
-# # Google Dark
-# colors:
-#   primary:
-#     background: '#202124'
-#     foreground: '#E8EAED'
-#   cursor:
-#     text: '#202124'
-#     cursor: '#E8EAED'
-#   normal:
-#     black:   '#202124'
-#     red:     '#EA4335'
-#     green:   '#34A853'
-#     yellow:  '#FBBC04'
-#     blue:    '#4285F4'
-#     magenta: '#A142F4'
-#     cyan:    '#24C1E0'
-#     white:   '#E8EAED'
-#   bright:
-#     black:   '#5F6368'
-#     red:     '#EA4335'
-#     green:   '#34A853'
-#     yellow:  '#FBBC04'
-#     blue:    '#4285F4'
-#     magenta: '#A142F4'
-#     cyan:    '#24C1E0'
-#     white:   '#E8EAED'
-
-# Google Light
+# Google Dark
 colors:
   primary:
-    background: '#FFFFFF'
-    foreground: '#5F6368'
+    background: '#202124'
+    foreground: '#E8EAED'
   cursor:
-    text: '#5F6368'
-    cursor: '#5F6368'
+    text: '#202124'
+    cursor: '#E8EAED'
   normal:
     black:   '#202124'
     red:     '#EA4335'
     green:   '#34A853'
     yellow:  '#FBBC04'
     blue:    '#4285F4'
-    magenta: '#24C1E0'
-    cyan:    '#A142F4'
+    magenta: '#A142F4'
+    cyan:    '#24C1E0'
     white:   '#E8EAED'
   bright:
     black:   '#5F6368'
     red:     '#EA4335'
     green:   '#34A853'
-    yellow:  '#FBBC05'
+    yellow:  '#FBBC04'
     blue:    '#4285F4'
-    magenta: '#24C1E0'
-    cyan:    '#A142F4'
-    white:   '#FFFFFF'
+    magenta: '#A142F4'
+    cyan:    '#24C1E0'
+    white:   '#E8EAED'
+
+# # Google Light
+# colors:
+#   primary:
+#     background: '#FFFFFF'
+#     foreground: '#5F6368'
+#   cursor:
+#     text: '#5F6368'
+#     cursor: '#5F6368'
+#   normal:
+#     black:   '#202124'
+#     red:     '#EA4335'
+#     green:   '#34A853'
+#     yellow:  '#FBBC04'
+#     blue:    '#4285F4'
+#     magenta: '#24C1E0'
+#     cyan:    '#A142F4'
+#     white:   '#E8EAED'
+#   bright:
+#     black:   '#5F6368'
+#     red:     '#EA4335'
+#     green:   '#34A853'
+#     yellow:  '#FBBC05'
+#     blue:    '#4285F4'
+#     magenta: '#24C1E0'
+#     cyan:    '#A142F4'
+#     white:   '#FFFFFF'
 
 # # One Light
 # colors:
