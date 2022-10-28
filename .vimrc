@@ -41,16 +41,6 @@ nnoremap <Leader>' ciw''<Esc>P
 nnoremap <Leader>[ ciw[]<Esc>P
 nnoremap <Leader>{ ciw{}<Esc>P
 
-if has("unix")
-  let s:uname = system("uname")
-  if s:uname == "Darwin\n"
-    nnoremap <C-i> :w<CR>
-    inoremap <C-i> <Esc>:w<CR>
-    vnoremap <C-i> <Esc>:w<CR>
-  endif
-endif
-
-
 map ,g :w\|:!go fmt % && go run %<cr>
 map ,t :w\|:!python3 %<cr>
 map ,b :w\|:!black %<cr>
