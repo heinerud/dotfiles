@@ -40,6 +40,7 @@ nnoremap <Leader>" ciw""<Esc>P
 nnoremap <Leader>' ciw''<Esc>P
 nnoremap <Leader>[ ciw[]<Esc>P
 nnoremap <Leader>{ ciw{}<Esc>P
+nnoremap <Leader>x o- [ ]
 
 map ,g :w\|:!go fmt % && go run %<cr>
 map ,t :w\|:!python3 %<cr>
