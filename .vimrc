@@ -44,6 +44,8 @@ map ,b :w\|:!black %<cr>
 map ,f :w\|:!flake8 %<cr>
 map ,i :w\|:!isort %<cr>
 map ,s :source ~/.vimrc<cr>
+map <leader>d :SignifyHunkDiff<CR>
+map <leader>q :SignifyHunkUndo<CR>
 
 
 set number
