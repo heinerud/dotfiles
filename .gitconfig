@@ -18,7 +18,6 @@
     deleted = red bold
     changed = yellow bold
     untracked = red bold
-
 [alias]
     a = add
     aa = add --all
@@ -40,3 +39,5 @@
     dh = diff --find-copies-harder
 [pull]
 	ff = only
+[push]
+	autoSetupRemote = true
