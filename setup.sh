@@ -1,7 +1,8 @@
 #!/bin/bash
 
-set -e
+# set -e
 
+# Apt packages
 sudo apt update
 sudo apt install -y \
     alacritty\
@@ -27,6 +28,9 @@ sudo apt install -y \
 
 # pipx
 
+# Vim
+mkdir -p ~/.vimswap
+
 if [[ ! -f ~/.vim/autoload/plug.vim ]]; then
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -39,18 +43,18 @@ if [[ ! -d ~/.pyenv ]]; then
 fi
 
 
+# Binaries
 mkdir -p ~/.local/bin
-mkdir -p ~/.vimswap
 
 if [[ ! -f ~/.local/bin/fd ]]; then
     ln -s $(which fdfind) ~/.local/bin/fd
 fi
 
 
+# Oh My Fish
 if [[ ! -d ~/.local/share/omf ]]; then
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 fi
-
 
 echo "omf install \
     agnoster\
@@ -62,6 +66,13 @@ echo "omf install \
 
 echo "omf theme agnoster" | fish
 
-echo Links to config files...
+
+# Configurations
+for f in $(git ls-files); do
+    if [[ $f != $(basename $0) ]]; then
+        ln -vfs $PWD/$f ~/$f
+    fi
+done
+
 
 echo Fonts...
