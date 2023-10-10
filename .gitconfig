@@ -41,3 +41,8 @@
 	ff = only
 [push]
 	autoSetupRemote = true
+
+[diff "ansible-vault"]
+    textconf = ansible-vault view
+    cachetextconv = False
+	textconv = ansible-vault view
