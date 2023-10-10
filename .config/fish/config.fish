@@ -18,6 +18,8 @@ if status --is-interactive
 
     set -g theme_nerd_fonts yes
 
+    fish_add_path ~/.local/bin
+
     abbr --add --global gam 'git commit -v --amend'
     abbr --add --global gap 'git add -p'
     abbr --add --global gb 'git branch'
