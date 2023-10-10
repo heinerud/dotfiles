@@ -36,27 +36,3 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 pip install pipx
-echo bandit black flake8 isort mypy pipenv pylint sphinx tox pytest | xargs -n1 pipx install
-
-abbr dc 'sudo docker-compose'
-abbr docker 'sudo docker'
-abbr gap 'git add -p'
-abbr gb 'git branch'
-abbr gcb 'git branch | tac | fzf | xargs -r git checkout'
-abbr gcp 'git checkout -p'
-abbr gf 'git fetch'
-abbr gfp 'git fetch -p'
-abbr gg 'git grep'
-abbr gl 'git log --oneline --graph'
-abbr gls 'git ls-files'
-abbr gp 'git pull'
-abbr gr 'git rebase'
-abbr gs 'git status'
-abbr py python3
-abbr python python3
-abbr r ranger
-abbr tigb 'tig (git branch | fzf | sed "s/ //g")'
-abbr tmux 'env TERM=screen-256color tmux'
-abbr xc 'xclip -selection clipboard'
-
-echo dbaeumer.vscode-eslint eamodio.gitlens esbenp.prettier-vscode Gruntfuggly.todo-tree monokai.theme-monokai-pro-vscode ms-azuretools.vscode-docker ms-python.python njpwerner.autodocstring PKief.material-icon-theme redhat.vscode-yaml richie5um2.vscode-sort-json wayou.vscode-todo-highlight | xargs -n1 code --install-extension
