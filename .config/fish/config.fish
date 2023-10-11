@@ -1,13 +1,11 @@
 if status --is-interactive
     switch (uname)
         case Linux
-            [ -f /usr/share/autojump/autojump.fish ]; and source /usr/share/autojump/autojump.fish
             abbr --add --global up 'sudo apt update && apt list --upgradable'
             abbr --add --global upg 'sudo apt upgrade'
             abbr --add --global docker 'sudo docker'
             abbr --add --global dc 'sudo docker-compose'
         case Darwin
-            [ -f /opt/homebrew/share/autojump/autojump.fish ]; and source /opt/homebrew/share/autojump/autojump.fish
             abbr --add --global dc 'docker-compose'
     end
 
@@ -18,7 +16,7 @@ if status --is-interactive
 
     set -g theme_nerd_fonts yes
 
-    fish_add_path ~/.local/bin
+    fish_add_path --global ~/.local/bin
 
     abbr --add --global gam 'git commit -v --amend'
     abbr --add --global gap 'git add -p'
@@ -39,6 +37,7 @@ if status --is-interactive
     abbr --add --global gs 'git status'
 
     abbr --add --global tigb 'tig (git branch | fzf | sed "s/ //g")'
+    abbr --add --global lg 'lazygit'
 
     abbr --add --global k 'kubectl'
     abbr --add --global kd 'kubectl --kubeconfig /home/joel/.kube/config-dev'
