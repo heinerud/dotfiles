@@ -3,9 +3,11 @@ if status --is-interactive
         case Linux
             abbr --add --global up 'sudo apt update && apt list --upgradable'
             abbr --add --global upg 'sudo apt upgrade'
+            abbr --add --global d 'sudo docker'
             abbr --add --global docker 'sudo docker'
             abbr --add --global dc 'sudo docker-compose'
         case Darwin
+            abbr --add --global d 'docker'
             abbr --add --global dc 'docker-compose'
     end
 
@@ -17,6 +19,10 @@ if status --is-interactive
     set -g theme_nerd_fonts yes
 
     fish_add_path --global ~/.local/bin
+
+    abbr --add --global adev 'ansible-playbook site.yml -i inventories/development/ -l app1.test --ask-vault-pass --check'
+    abbr --add --global astaging 'ansible-playbook site.yml -i inventories/staging/ -l app1.staging.smarteye.se --ask-vault-pass --check'
+    abbr --add --global aprod 'ansible-playbook site.yml -i inventories/production/ -l app1.smarteye.se --ask-vault-pass --check'
 
     abbr --add --global gam 'git commit -v --amend'
     abbr --add --global gap 'git add -p'

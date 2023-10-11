@@ -1,0 +1,24 @@
+{
+    "mapping": {
+        "1,56,1": [
+            "Super_L",
+            "keyboard"
+        ],
+        "1,125,1": [
+            "Alt_L",
+            "keyboard"
+        ],
+        "1,100,1": [
+            "Control_R",
+            "keyboard"
+        ],
+        "1,126,1": [
+            "Alt_R",
+            "keyboard"
+        ],
+        "1,58,1": [
+            "Escape",
+            "keyboard"
+        ]
+    }
+}
