@@ -105,7 +105,6 @@ fi
 # Python
 if [[ ! -d ~/.pyenv ]]; then
     curl https://pyenv.run | bash
-    pyenv doctor
 fi
 
 pipx install black
