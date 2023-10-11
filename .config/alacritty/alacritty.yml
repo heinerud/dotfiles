@@ -13,11 +13,11 @@ env:
 font:
   size: 10
   normal:
-    family: Hack Nerd Font
+    family: Hack Nerd Font Mono
   bold:
-    family: Hack Nerd Font
+    family: Hack Nerd Font Mono
   italic:
-    family: Hack Nerd Font
+    family: Hack Nerd Font Mono
 
 
 # Google Dark
