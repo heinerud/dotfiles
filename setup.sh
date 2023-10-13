@@ -138,7 +138,6 @@ fi
 
 echo "omf install \
     agnoster\
-    autojump\
     colored-man-pages\
     fzf\
     pyenv\

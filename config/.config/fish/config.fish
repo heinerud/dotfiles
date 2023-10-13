@@ -16,6 +16,8 @@ if status --is-interactive
         pyenv init - | source
     end
 
+    source /usr/share/autojump/autojump.fish
+
     set -g theme_nerd_fonts yes
 
     fish_add_path --global ~/.local/bin
