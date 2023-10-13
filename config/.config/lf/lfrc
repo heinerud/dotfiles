@@ -16,6 +16,6 @@ cmd vimdiff ${{
   vimdiff $fx
 }}
 
-cmd trash $IFS="`printf '\n\t'`"; mv $fx ~/.trash
+cmd trash $IFS="`printf '\n\t'`"; mkdir -p ~/.trash && mv --backup=numbered $fx ~/.trash
 
 set info size
