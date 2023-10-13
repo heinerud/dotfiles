@@ -105,6 +105,25 @@ fi
 # Python
 if [[ ! -d ~/.pyenv ]]; then
     curl https://pyenv.run | bash
+    # https://realpython.com/intro-to-pyenv/#installing-pyenv
+    sudo apt-get install -y \
+        make \
+        build-essential \
+        curl \
+        libbz2-dev \
+        libffi-dev \
+        liblzma-dev \
+        libncurses5-dev \
+        libncursesw5-dev \
+        libreadline-dev \
+        libsqlite3-dev \
+        libssl-dev \
+        llvm \
+        python3-openssl \
+        tk-dev \
+        wget \
+        xz-utils \
+        zlib1g-dev
 fi
 
 pipx install black
