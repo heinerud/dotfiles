@@ -1,5 +1,6 @@
 [user]
     name = Joel Heinerud
+    email = joel.heinerud@gmail.com
 [core]
     editor = vim
 [color]
@@ -46,3 +47,6 @@
     textconf = ansible-vault view
     cachetextconv = False
 	textconv = ansible-vault view
+
+[includeIf "gitdir:repos/smarteye/"]
+    path = ~/repos/smarteye/.gitconfig
