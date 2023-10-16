@@ -1,185 +1,216 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 set -e
 
-# Apt packages
-sudo apt-get update
-sudo apt-get install -y \
-    ca-certificates\
-    curl\
-    gnupg\
+function install-common {
+    # vim-plugin-manager
+    mkdir -p ~/.vimswap
+    if [[ ! -f ~/.vim/autoload/plug.vim ]]; then
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    fi
 
-# Docker
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
-    sudo gpg --yes --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
+    # tmux-plugin-manager
+    if [[ ! -d ~/.tmux/plugins/tpm ]]; then
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    fi
 
-echo \
-  "deb [arch="$(dpkg --print-architecture)" \
-  signed-by=/etc/apt/keyrings/docker.gpg] \
-  https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    pipx install black
+    pipx install isort
+    pipx install pipenv
 
-# Spotify
-curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | \
-    sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-echo "deb http://repository.spotify.com stable non-free" | \
-    sudo tee /etc/apt/sources.list.d/spotify.list
+    # oh-my-fish
+    if [[ ! -d ~/.local/share/omf ]]; then
+        curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+    fi
+    echo "omf install \
+        agnoster\
+        colored-man-pages\
+        fzf\
+        pyenv\
+        " | fish
+    echo "omf theme agnoster" | fish
 
-# Tailscale
-curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/lunar.noarmor.gpg | \
-    sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
-curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/lunar.tailscale-keyring.list | \
-    sudo tee /etc/apt/sources.list.d/tailscale.list
+    # config-files
+    pushd config
+    find . -type d | while read d; do
+        mkdir -pv "$HOME/$d"
+    done
 
-sudo apt-get update
-sudo apt-get install -y \
-    alacritty\
-    autojump\
-    docker-ce\
-    docker-ce-cli\
-    containerd.io\
-    docker-buildx-plugin\
-    docker-compose-plugin\
-    fd-find\
-    fish\
-    fzf\
-    git\
-    gnome-tweaks\
-    highlight\
-    htop\
-    input-remapper\
-    jq\
-    lf\
-    nethogs\
-    pipx\
-    remmina\
-    ripgrep\
-    spotify-client\
-    tailscale\
-    thunderbird\
-    tig\
-    tldr\
-    tmux\
-    traceroute\
-    tree\
-    vim\
-    wget\
-    wl-clipboard\
-    xclip\
+    find . -type f | while read f; do
+        ln -vfs "$PWD/$f" "$HOME/$f"
+    done
+    popd
 
+    vim -c "PlugUpdate" -c ":qa"
 
-# User binaries
-mkdir -p ~/.local/bin
+    tmux run-shell ~/.tmux/plugins/tpm/bindings/install_plugins
+    tmux send-keys 'Escape'
+}
 
-if [[ ! -f ~/.local/bin/fd ]]; then
-    ln -s $(which fdfind) ~/.local/bin/fd
-fi
+function install-font-hack {
+    if [[ ! -d $1 ]]; then
+        wget --directory-prefix /tmp \
+            https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip
+        unzip /tmp/Hack.zip -d $1
+    fi
+}
 
+function common-packages {
+    echo\
+        alacritty\
+        autojump\
+        fish\
+        fzf\
+        highlight\
+        jq\
+        lf\
+        pipx\
+        ripgrep\
+        tailscale\
+        tig\
+        tldr\
+        tmux\
+        tree\
+        vim\
+        watch\
+        wget
+}
 
-# Lazygit
-if [[ ! -f ~/.local/bin/lazygit ]]; then
-    LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-    curl -Lo /tmp/lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-    tar -C /tmp -xvf /tmp/lazygit.tar.gz lazygit
-    sudo install /tmp/lazygit ~/.local/bin
-fi
+function install-mac {
+    brew update
+    brew install $(common-packages)\
+    brew install\
+        fd\
+        lazygit\
+        pyenv\
+    brew install --cask\
+        audio-hijack\
+        backblaze\
+        calibre\
+        docker\
+        firefox\
+        karabiner-elements\
+        loopback\
+        loupedeck\
+        messenger\
+        microsoft-remote-desktop\
+        obsidian\
+        scroll-reverser\
+        slack\
+        spotify\
+        telegram
 
+    install-common
+    install-font-hack ~/Library/fonts/hack
+}
 
-# Vim
-mkdir -p ~/.vimswap
-if [[ ! -f ~/.vim/autoload/plug.vim ]]; then
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
-
-# Tmux
-if [[ ! -d ~/.tmux/plugins/tpm ]]; then
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-fi
-
-
-# Python
-if [[ ! -d ~/.pyenv ]]; then
-    curl https://pyenv.run | bash
-    # https://realpython.com/intro-to-pyenv/#installing-pyenv
+function install-linux {
+    sudo apt-get update
     sudo apt-get install -y \
-        make \
-        build-essential \
-        curl \
-        libbz2-dev \
-        libffi-dev \
-        liblzma-dev \
-        libncurses5-dev \
-        libncursesw5-dev \
-        libreadline-dev \
-        libsqlite3-dev \
-        libssl-dev \
-        llvm \
-        python3-openssl \
-        tk-dev \
-        wget \
-        xz-utils \
-        zlib1g-dev
-fi
+        ca-certificates\
+        curl\
+        gnupg
 
-pipx install black
-pipx install isort
-pipx install pipenv
+    # Docker
+    sudo install -m 0755 -d /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+        sudo gpg --yes --dearmor -o /etc/apt/keyrings/docker.gpg
+    sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
+    echo \
+      "deb [arch="$(dpkg --print-architecture)" \
+      signed-by=/etc/apt/keyrings/docker.gpg] \
+      https://download.docker.com/linux/ubuntu \
+      "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-# Fish
-if [[ ! -d ~/.local/share/omf ]]; then
-    curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-fi
+    # Spotify
+    curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | \
+        sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+    echo "deb http://repository.spotify.com stable non-free" | \
+        sudo tee /etc/apt/sources.list.d/spotify.list
 
-echo "omf install \
-    agnoster\
-    colored-man-pages\
-    fzf\
-    pyenv\
-    " | fish
+    # Tailscale
+    curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/lunar.noarmor.gpg | \
+        sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+    curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/lunar.tailscale-keyring.list | \
+        sudo tee /etc/apt/sources.list.d/tailscale.list
 
-echo "omf theme agnoster" | fish
+    sudo apt-get update
+    sudo apt-get install -y $(common-packages)
+    sudo apt-get install -y \
+        docker-ce\
+        docker-ce-cli\
+        containerd.io\
+        docker-buildx-plugin\
+        docker-compose-plugin\
+        fd-find\
+        git\
+        gnome-tweaks\
+        htop\
+        input-remapper\
+        nethogs\
+        remmina\
+        spotify-client\
+        thunderbird\
+        traceroute\
+        wl-clipboard\
+        xclip
 
+    mkdir -p ~/.local/bin
+    if [[ ! -f ~/.local/bin/fd ]]; then
+        ln -s $(which fdfind) ~/.local/bin/fd
+    fi
 
-# Configurations
-pushd config
-find .* -type d | while read d; do
-    mkdir -pv "$HOME/$d"
-done
+    # lazygit
+    if [[ ! -f ~/.local/bin/lazygit ]]; then
+        LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+        curl -Lo /tmp/lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+        tar -C /tmp -xvf /tmp/lazygit.tar.gz lazygit
+        sudo install /tmp/lazygit ~/.local/bin
+    fi
 
-find .* -type f | while read f; do
-    ln -vfs "$PWD/$f" "$HOME/$f"
-done
-popd
+    if [[ ! -d ~/.pyenv ]]; then
+        curl https://pyenv.run | bash
+        # https://realpython.com/intro-to-pyenv/#installing-pyenv
+        sudo apt-get install -y \
+            make \
+            build-essential \
+            curl \
+            libbz2-dev \
+            libffi-dev \
+            liblzma-dev \
+            libncurses5-dev \
+            libncursesw5-dev \
+            libreadline-dev \
+            libsqlite3-dev \
+            libssl-dev \
+            llvm \
+            python3-openssl \
+            tk-dev \
+            wget \
+            xz-utils \
+            zlib1g-dev
+    fi
 
-
-# Fonts
-if [[ ! -d ~/.local/share/fonts/hack ]]; then
-    wget --directory-prefix /tmp \
-        https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip
-    unzip /tmp/Hack.zip -d ~/.local/share/fonts/hack
-
-    # Reload fonts
+    install-font-hack ~/.local/share/fonts/hack
     fc-cache -f -v
+
+    install-common
+
+    sudo tailscale up --ssh
+}
+
+
+if [ "$(uname)" == "Darwin" ]; then
+    install-mac
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    install-linux
 fi
-
-sudo tailscale up --ssh
-
-vim \
-    -c "PlugUpdate" \
-    -c ":qa"
-
-tmux run-shell ~/.tmux/plugins/tpm/bindings/install_plugins
-tmux send-keys 'Escape'
 
 echo
 echo " - chsh -s \$(which fish)"
-echo " - tmux: <prefix> + I"
 echo " - $ pyenv doctor"
 echo " - $ sudo docker run hello-world"
 
