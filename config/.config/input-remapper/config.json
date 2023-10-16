@@ -1,6 +1,7 @@
 {
     "autoload": {
-        "Apple Inc. Magic Keyboard": "magic-keyboard"
+        "Apple Inc. Magic Keyboard": "magic-keyboard",
+        "Magic Keyboard": "magic-keyboard"
     },
     "version": "1.5.0"
 }
