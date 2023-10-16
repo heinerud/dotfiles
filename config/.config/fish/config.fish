@@ -1,12 +1,14 @@
 if status --is-interactive
     switch (uname)
         case Linux
+            source /usr/share/autojump/autojump.fish
             abbr --add --global up 'sudo apt update && apt list --upgradable'
             abbr --add --global upg 'sudo apt upgrade'
             abbr --add --global d 'sudo docker'
             abbr --add --global docker 'sudo docker'
             abbr --add --global dc 'sudo docker-compose'
         case Darwin
+            source /opt/homebrew/share/autojump/autojump.fish
             abbr --add --global d 'docker'
             abbr --add --global dc 'docker-compose'
     end
@@ -15,8 +17,6 @@ if status --is-interactive
         status is-login; and pyenv init --path | source
         pyenv init - | source
     end
-
-    source /usr/share/autojump/autojump.fish
 
     set -g theme_nerd_fonts yes
 
