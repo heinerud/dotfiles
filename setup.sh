@@ -125,12 +125,6 @@ function install-linux {
       "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
       sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-    # Spotify
-    curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | \
-        sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-    echo "deb http://repository.spotify.com stable non-free" | \
-        sudo tee /etc/apt/sources.list.d/spotify.list
-
     # Tailscale
     curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/lunar.noarmor.gpg | \
         sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
@@ -152,7 +146,6 @@ function install-linux {
         input-remapper\
         nethogs\
         remmina\
-        spotify-client\
         thunderbird\
         traceroute\
         wl-clipboard\
