@@ -6,11 +6,11 @@ if status --is-interactive
             abbr --add --global upg 'sudo apt upgrade'
             abbr --add --global d 'sudo docker'
             abbr --add --global docker 'sudo docker'
-            abbr --add --global dc 'sudo docker-compose'
+            abbr --add --global dc 'sudo docker compose'
         case Darwin
             source /opt/homebrew/share/autojump/autojump.fish
             abbr --add --global d 'docker'
-            abbr --add --global dc 'docker-compose'
+            abbr --add --global dc 'docker compose'
     end
 
     if type -q $pyenv
