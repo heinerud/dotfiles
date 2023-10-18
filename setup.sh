@@ -134,6 +134,7 @@ function install-linux {
     sudo apt-get update
     sudo apt-get install -y $(common-packages)
     sudo apt-get install -y \
+        cifs-utils\
         docker-ce\
         docker-ce-cli\
         containerd.io\
