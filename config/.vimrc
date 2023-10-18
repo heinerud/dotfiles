@@ -18,7 +18,11 @@ call plug#end()
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
+nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-l> <C-w>l
+nnoremap <C-Right> :tabnext<CR>
+
+nnoremap <C-n> :tabnew<CR>
 
 nnoremap <C-t> :Files<CR>
 
