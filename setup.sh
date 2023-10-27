@@ -60,6 +60,7 @@ function common-packages {
     echo\
         alacritty\
         autojump\
+        cmake\
         fish\
         fzf\
         highlight\
