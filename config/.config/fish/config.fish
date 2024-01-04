@@ -52,6 +52,7 @@ if status --is-interactive
     abbr --add --global ks 'kubectl --kubeconfig /home/joel/.kube/config-staging'
     abbr --add --global kp 'kubectl get pods --field-selector status.phase=Pending --sort-by=.metadata.creationTimestamp -n'
     abbr --add --global kr 'kubectl get pods --field-selector status.phase=Running --sort-by=.metadata.creationTimestamp -n'
+    abbr --add --global ke 'kubectl get events --sort-by=.metadata.creationTimestamp -n'
 
     abbr --add --global p2r 'jq -r ".default | to_entries[] | .key + .value.version"'
     abbr --add --global py 'python3'
