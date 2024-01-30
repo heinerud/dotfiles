@@ -13,6 +13,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'vim-python/python-syntax'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 nnoremap <C-j> <C-w>j
