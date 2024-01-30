@@ -2,6 +2,9 @@
 
 set -e
 
+# TODO
+# viddy: https://github.com/sachaos/viddy
+
 function install-common {
     # vim-plugin-manager
     mkdir -p ~/.vimswap
