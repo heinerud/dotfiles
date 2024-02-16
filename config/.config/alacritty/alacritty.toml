@@ -1,0 +1,93 @@
+[colors.bright]
+black = "#5F6368"
+blue = "#4285F4"
+cyan = "#24C1E0"
+green = "#34A853"
+magenta = "#A142F4"
+red = "#EA4335"
+white = "#E8EAED"
+yellow = "#FBBC04"
+
+[colors.cursor]
+cursor = "#E8EAED"
+text = "#202124"
+
+[colors.normal]
+black = "#202124"
+blue = "#4285F4"
+cyan = "#24C1E0"
+green = "#34A853"
+magenta = "#A142F4"
+red = "#EA4335"
+white = "#E8EAED"
+yellow = "#FBBC04"
+
+[colors.primary]
+background = "#202124"
+foreground = "#E8EAED"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 10
+
+[font.bold]
+family = "Hack Nerd Font Mono"
+
+[font.italic]
+family = "Hack Nerd Font Mono"
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+
+[[keyboard.bindings]]
+chars = "\u001Bj"
+key = "J"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bk"
+key = "K"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bh"
+key = "H"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bl"
+key = "L"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BJ"
+key = "J"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001BK"
+key = "K"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001BH"
+key = "H"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001BL"
+key = "L"
+mods = "Alt|Shift"
+
+[window]
+decorations = "none"
+
+[window.dimensions]
+columns = 150
+lines = 40
+
+[window.padding]
+x = 0
+y = 0
