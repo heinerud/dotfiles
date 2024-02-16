@@ -83,11 +83,14 @@ function common-packages {
 
 function install-mac {
     brew update
-    brew install $(common-packages)\
+
+    brew install $(common-packages)
+
     brew install\
         fd\
         lazygit\
         pyenv\
+
     brew install --cask\
         audio-hijack\
         backblaze\
