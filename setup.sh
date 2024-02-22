@@ -69,6 +69,7 @@ function common-packages {
         highlight\
         jq\
         lf\
+        ncdu\
         pipx\
         ripgrep\
         tailscale\
