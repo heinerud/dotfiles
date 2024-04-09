@@ -7,10 +7,14 @@ if status --is-interactive
             abbr --add --global d 'sudo docker'
             abbr --add --global docker 'sudo docker'
             abbr --add --global dc 'sudo docker compose'
+            abbr --add --global kd 'kubectl --kubeconfig /home/joel/.kube/config-dev'
+            abbr --add --global ks 'kubectl --kubeconfig /home/joel/.kube/config-staging'
         case Darwin
             source /opt/homebrew/share/autojump/autojump.fish
             abbr --add --global d 'docker'
             abbr --add --global dc 'docker compose'
+            abbr --add --global kd 'kubectl --kubeconfig /Users/joel/.kube/config-dev'
+            abbr --add --global ks 'kubectl --kubeconfig /Users/joel/.kube/config-staging'
     end
 
     if type -q $pyenv
@@ -48,8 +52,6 @@ if status --is-interactive
     abbr --add --global lg 'lazygit'
 
     abbr --add --global k 'kubectl'
-    abbr --add --global kd 'kubectl --kubeconfig /home/joel/.kube/config-dev'
-    abbr --add --global ks 'kubectl --kubeconfig /home/joel/.kube/config-staging'
     abbr --add --global kp 'kubectl get pods --field-selector status.phase=Pending --sort-by=.metadata.creationTimestamp -n'
     abbr --add --global kr 'kubectl get pods --field-selector status.phase=Running --sort-by=.metadata.creationTimestamp -n'
     abbr --add --global ke 'kubectl get events --sort-by=.metadata.creationTimestamp -n'
