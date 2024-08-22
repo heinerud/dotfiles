@@ -19,6 +19,8 @@ if status --is-interactive
             abbr --add --global ks 'kubectl --kubeconfig /Users/joel/.kube/config-staging'
     end
 
+    fzf --fish | source
+
     if type -q $pyenv
         status is-login; and pyenv init --path | source
         pyenv init - | source
