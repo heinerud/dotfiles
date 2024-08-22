@@ -11,6 +11,7 @@ if status --is-interactive
             abbr --add --global ks 'kubectl --kubeconfig /home/joel/.kube/config-staging'
         case Darwin
             fish_add_path /opt/homebrew/bin
+            fish_add_path /opt/homebrew/sbin
             source /opt/homebrew/share/autojump/autojump.fish
             abbr --add --global d 'docker'
             abbr --add --global dc 'docker compose'
