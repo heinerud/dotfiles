@@ -51,6 +51,8 @@ if status --is-interactive
     abbr --add --global gls 'git ls-files'
     abbr --add --global gp 'git pull'
     abbr --add --global gs 'git status'
+    abbr --add --global gst 'git stash'
+    abbr --add --global gstp 'git stash pop'
 
     abbr --add --global tigb 'tig (git branch | fzf | sed "s/ //g")'
     abbr --add --global lg 'lazygit'
