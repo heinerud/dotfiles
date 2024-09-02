@@ -19,9 +19,7 @@ function install-common {
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     fi
 
-    uv tool install black
-    uv tool install isort
-    uv tool install pipenv
+    uv tool install ruff
 
     # oh-my-fish
     if [[ ! -d ~/.local/share/omf ]]; then
