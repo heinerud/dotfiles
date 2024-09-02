@@ -18,6 +18,9 @@ function install-common {
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     fi
 
+    # uv
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+
     pipx install black
     pipx install isort
     pipx install pipenv

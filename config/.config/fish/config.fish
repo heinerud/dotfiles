@@ -19,6 +19,7 @@ if status --is-interactive
             abbr --add --global ks 'kubectl --kubeconfig /Users/joel/.kube/config-staging'
     end
 
+    source $HOME/.cargo/bin
 
     fzf --fish | source
 
