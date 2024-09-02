@@ -30,7 +30,6 @@ function install-common {
         agnoster\
         colored-man-pages\
         fzf\
-        pyenv\
         " | fish
     echo "omf theme agnoster" | fish
 
@@ -90,7 +89,6 @@ function install-mac {
     brew install\
         fd\
         lazygit\
-        pyenv\
 
     brew install --cask\
         audio-hijack\
@@ -173,29 +171,6 @@ function install-linux {
         sudo install /tmp/lazygit ~/.local/bin
     fi
 
-    if [[ ! -d ~/.pyenv ]]; then
-        curl https://pyenv.run | bash
-        # https://realpython.com/intro-to-pyenv/#installing-pyenv
-        sudo apt-get install -y \
-            make \
-            build-essential \
-            curl \
-            libbz2-dev \
-            libffi-dev \
-            liblzma-dev \
-            libncurses5-dev \
-            libncursesw5-dev \
-            libreadline-dev \
-            libsqlite3-dev \
-            libssl-dev \
-            llvm \
-            python3-openssl \
-            tk-dev \
-            wget \
-            xz-utils \
-            zlib1g-dev
-    fi
-
     install-font-hack ~/.local/share/fonts/hack
     fc-cache -f -v
 
@@ -213,7 +188,6 @@ fi
 
 echo
 echo " - chsh -s \$(which fish)"
-echo " - $ pyenv doctor"
 echo " - $ sudo docker run hello-world"
 
 # TODO:
