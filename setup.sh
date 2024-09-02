@@ -21,9 +21,9 @@ function install-common {
     # uv
     curl -LsSf https://astral.sh/uv/install.sh | sh
 
-    pipx install black
-    pipx install isort
-    pipx install pipenv
+    uv tool install black
+    uv tool install isort
+    uv tool install pipenv
 
     # oh-my-fish
     if [[ ! -d ~/.local/share/omf ]]; then
@@ -72,7 +72,6 @@ function common-packages {
         jq\
         lf\
         ncdu\
-        pipx\
         ripgrep\
         tailscale\
         tig\
