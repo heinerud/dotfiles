@@ -5,6 +5,7 @@ set -e
 # TODO
 # viddy: https://github.com/sachaos/viddy
 # test with docker
+# fisher: https://github.com/jorgebucaran/fisher (remove omf)
 
 function install-common {
     # vim-plugin-manager
