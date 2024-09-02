@@ -4,6 +4,7 @@ set -e
 
 # TODO
 # viddy: https://github.com/sachaos/viddy
+# test with docker
 
 function install-common {
     # vim-plugin-manager
