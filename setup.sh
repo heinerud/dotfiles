@@ -18,9 +18,6 @@ function install-common {
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     fi
 
-    # uv
-    curl -LsSf https://astral.sh/uv/install.sh | sh
-
     uv tool install black
     uv tool install isort
     uv tool install pipenv
@@ -91,6 +88,7 @@ function install-mac {
     brew install\
         fd\
         lazygit\
+        uv\
 
     brew install --cask\
         audio-hijack\
@@ -172,6 +170,10 @@ function install-linux {
         tar -C /tmp -xvf /tmp/lazygit.tar.gz lazygit
         sudo install /tmp/lazygit ~/.local/bin
     fi
+
+    # uv
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+
 
     install-font-hack ~/.local/share/fonts/hack
     fc-cache -f -v
