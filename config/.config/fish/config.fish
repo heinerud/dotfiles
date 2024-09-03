@@ -2,7 +2,6 @@ if status --is-interactive
     switch (uname)
         case Linux
             source /usr/share/autojump/autojump.fish
-            source $HOME/.cargo/bin
             abbr --add --global up 'sudo apt update && apt list --upgradable'
             abbr --add --global upg 'sudo apt upgrade'
             abbr --add --global d 'sudo docker'
