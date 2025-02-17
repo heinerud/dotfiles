@@ -1,0 +1,25 @@
+macos-icon = blueprint
+
+palette = 0=#202124
+palette = 1=#EA4335
+palette = 2=#34A853
+palette = 3=#FBBC04
+palette = 4=#4285F4
+palette = 5=#A142F4
+palette = 6=#24C1E0
+palette = 7=#E8EAED
+palette = 8=#5F6368
+palette = 9=#EA4335
+palette = 10=#34A853
+palette = 11=#FBBC04
+palette = 12=#4285F4
+palette = 13=#A142F4
+palette = 14=#24C1E0
+palette = 15=#E8EAED
+background = #202124
+foreground = #E8EAED
+cursor-color = #E8EAED
+cursor-text = #202124
+
+#selection-background = #626880
+#selection-foreground = #c6d0f5
