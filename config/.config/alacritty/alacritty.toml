@@ -33,7 +33,7 @@ TERM = "xterm-256color"
 size = 11
 
 [font.bold]
-family = "Hack Nerd Font Mono"
+family = "JetBrains Mono"
 
 [font.italic]
 family = "Hack Nerd Font Mono"
