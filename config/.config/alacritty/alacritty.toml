@@ -36,10 +36,10 @@ size = 11
 family = "JetBrains Mono"
 
 [font.italic]
-family = "Hack Nerd Font Mono"
+family = "JetBrains Mono"
 
 [font.normal]
-family = "Hack Nerd Font Mono"
+family = "JetBrains Mono"
 
 [[keyboard.bindings]]
 chars = "\u001Bj"
