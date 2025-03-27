@@ -9,6 +9,7 @@ if status --is-interactive
             abbr --add --global dc 'sudo docker compose'
             abbr --add --global kd 'kubectl --kubeconfig /home/joel/.kube/config-dev'
             abbr --add --global ks 'kubectl --kubeconfig /home/joel/.kube/config-staging'
+            abbr --add --global k9ss 'k9s --kubeconfig /home/joel/.kube/config-staging'
         case Darwin
             fish_add_path /opt/homebrew/bin
             fish_add_path /opt/homebrew/sbin
@@ -17,6 +18,7 @@ if status --is-interactive
             abbr --add --global dc 'docker compose'
             abbr --add --global kd 'kubectl --kubeconfig /Users/joel/.kube/config-dev'
             abbr --add --global ks 'kubectl --kubeconfig /Users/joel/.kube/config-staging'
+            abbr --add --global k9ss 'k9s --kubeconfig /Users/joel/.kube/config-staging'
     end
 
     fzf --fish | source
