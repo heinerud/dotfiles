@@ -59,4 +59,6 @@ if status --is-interactive
 
     abbr --add --global p2r 'jq -r ".default | to_entries[] | .key + .value.version"'
     abbr --add --global py 'python3'
+
+    abbr --add --global s 'source .venv/bin/activate.fish'
 end
