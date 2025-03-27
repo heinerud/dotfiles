@@ -1,0 +1,6 @@
+customCommands:
+  - key: 'U'
+    command: 'git submodule update --init --recursive'
+    context: 'files'
+    description: 'Update submodules'
+    stream: true
