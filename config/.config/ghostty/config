@@ -25,3 +25,5 @@ cursor-text = #202124
 font-feature=-calt
 font-feature=-liga
 font-feature=-dlig
+
+macos-non-native-fullscreen = true
