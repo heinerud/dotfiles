@@ -21,3 +21,7 @@ cursor-text = #202124
 
 #selection-background = #626880
 #selection-foreground = #c6d0f5
+
+font-feature=-calt
+font-feature=-liga
+font-feature=-dlig
