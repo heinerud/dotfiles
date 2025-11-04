@@ -48,6 +48,8 @@ nnoremap <Leader>x o- [ ]
 vnoremap <leader>y :w !wl-copy<CR><CR>
 nnoremap <leader>p :r !wl-paste<CR>
 
+nnoremap <leader>g :execute 'Git grep ' . expand('<cword>')<CR>
+
 map ,g :w\|:!go fmt % && go run %<cr>
 map ,t :w\|:!python3 %<cr>
 map ,b :w\|:!black %<cr>
