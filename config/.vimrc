@@ -43,6 +43,11 @@ nnoremap <Leader>[ ciw[]<Esc>P
 nnoremap <Leader>{ ciw{}<Esc>P
 nnoremap <Leader>x o- [ ]
 
+" copy-paste on wayland
+" requires wl-clipboard
+vnoremap <leader>y :w !wl-copy<CR><CR>
+nnoremap <leader>p :r !wl-paste<CR>
+
 map ,g :w\|:!go fmt % && go run %<cr>
 map ,t :w\|:!python3 %<cr>
 map ,b :w\|:!black %<cr>
